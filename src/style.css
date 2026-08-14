@@ -1,8 +1,8 @@
-/* 全局样式与变量重置 */
 :root {
-  --font-primary: 'Fredoka', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-title: 'Bungee', 'Fredoka', cursive, sans-serif;
-  --font-body: 'Outfit', sans-serif;
+  --font-primary: 'ZCOOL KuaiLe', 'Fredoka', '幼圆', 'YouYuan', 'Microsoft YaHei UI', sans-serif;
+  --font-title: 'ZCOOL KuaiLe', 'Luckiest Guy', 'Bungee', 'ZCOOL QingKe HuangYou', '幼圆', cursive, sans-serif;
+  --font-comic: 'ZCOOL KuaiLe', 'Luckiest Guy', 'ZCOOL QingKe HuangYou', cursive, sans-serif;
+  --font-body: 'ZCOOL KuaiLe', 'Fredoka', 'Microsoft YaHei UI', 'PingFang SC', sans-serif;
 
   --color-pop-yellow: #feca57;
   --color-pop-gold: #ff9f43;
@@ -11,13 +11,14 @@
   --color-sky-cyan: #48dbfb;
   --color-grass-green: #1dd1a1;
   --color-dark-bg: #222f3e;
-  --color-card-bg: rgba(34, 47, 62, 0.88);
+  --color-card-bg: rgba(34, 47, 62, 0.92);
   --color-white: #ffffff;
   --color-cream: #fff9e6;
 
-  --shadow-comic: 0 8px 0 rgba(0, 0, 0, 0.35);
+  --shadow-comic: 0 8px 0 rgba(0, 0, 0, 0.4);
   --shadow-comic-btn: 0 6px 0 #b33939;
   --shadow-comic-yellow: 0 6px 0 #d35400;
+  --text-stroke-comic: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0 3px 0 #000;
 }
 
 * {
@@ -208,8 +209,8 @@ html, body {
 .hud-panel {
   background: var(--color-card-bg);
   backdrop-filter: blur(8px);
-  border: 3px solid #000;
-  border-radius: 16px;
+  border: 3.5px solid #000;
+  border-radius: 18px;
   padding: 8px 24px;
   box-shadow: var(--shadow-comic);
   display: flex;
@@ -219,16 +220,18 @@ html, body {
 
 .hud-label {
   font-family: var(--font-title);
-  font-size: 13px;
-  letter-spacing: 1px;
+  font-size: 14px;
+  letter-spacing: 1.5px;
   color: var(--color-pop-yellow);
+  text-shadow: 1.5px 1.5px 0 #000;
 }
 
 .hud-value {
   font-family: var(--font-title);
-  font-size: 32px;
+  font-size: 34px;
   color: var(--color-white);
-  text-shadow: 2px 2px 0 #000;
+  text-shadow: 2.5px 2.5px 0 #000, -1px -1px 0 #000;
+  letter-spacing: 1px;
 }
 
 .highlight-timer {
@@ -258,32 +261,33 @@ html, body {
 
 .combo-count {
   font-family: var(--font-title);
-  font-size: 44px;
+  font-size: 48px;
   color: var(--color-pop-yellow);
-  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000;
+  text-shadow: 3.5px 3.5px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
   line-height: 1;
   animation: comboBounce 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .combo-title {
   font-family: var(--font-title);
-  font-size: 20px;
+  font-size: 22px;
   color: var(--color-blitz-red);
   background: #ffffff;
-  border: 3px solid #000;
-  padding: 2px 12px;
-  border-radius: 10px;
-  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4);
+  border: 3.5px solid #000;
+  padding: 3px 14px;
+  border-radius: 12px;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.4);
   transform: rotate(-3deg);
   margin-top: 4px;
+  letter-spacing: 1px;
 }
 
 .combo-bar-bg {
-  width: 140px;
-  height: 8px;
-  background: rgba(0, 0, 0, 0.5);
-  border: 2px solid #000;
-  border-radius: 6px;
+  width: 150px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2.5px solid #000;
+  border-radius: 8px;
   margin-top: 6px;
   overflow: hidden;
 }
@@ -315,9 +319,9 @@ html, body {
 .floating-text {
   position: absolute;
   font-family: var(--font-title);
-  font-size: 24px;
+  font-size: 28px;
   color: var(--color-pop-yellow);
-  text-shadow: 2px 2px 0 #000;
+  text-shadow: 2.5px 2.5px 0 #000, -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000;
   pointer-events: none;
   animation: floatUpFade 0.9s forwards ease-out;
 }
@@ -337,24 +341,27 @@ html, body {
 }
 
 .controls-hint {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #000;
   border-radius: 20px;
-  padding: 6px 16px;
-  font-size: 14px;
+  padding: 8px 18px;
+  font-family: var(--font-primary);
+  font-size: 15px;
   color: var(--color-cream);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3);
 }
 
 .weapon-panel {
   background: var(--color-card-bg);
-  border: 3px solid #000;
-  border-radius: 18px;
-  padding: 12px 20px;
+  border: 3.5px solid #000;
+  border-radius: 20px;
+  padding: 12px 22px;
   box-shadow: var(--shadow-comic);
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  min-width: 220px;
+  min-width: 230px;
 }
 
 .weapon-info {
@@ -367,14 +374,17 @@ html, body {
 
 .weapon-name {
   font-family: var(--font-title);
-  font-size: 15px;
+  font-size: 16px;
   color: var(--color-pop-yellow);
+  text-shadow: 1.5px 1.5px 0 #000;
+  letter-spacing: 0.5px;
 }
 
 .reload-indicator {
   font-family: var(--font-title);
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-blitz-red);
+  text-shadow: 1.5px 1.5px 0 #000;
   animation: pulseReload 0.6s infinite alternate;
 }
 
@@ -395,13 +405,13 @@ html, body {
 }
 
 .ammo-kernel {
-  width: 10px;
-  height: 18px;
+  width: 11px;
+  height: 19px;
   background: var(--color-pop-yellow);
-  border: 1.5px solid #000;
+  border: 2px solid #000;
   border-radius: 4px;
   transform: rotate(-5deg);
-  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 1.5px 1.5px 0 rgba(0, 0, 0, 0.3);
 }
 
 .ammo-kernel.spent {
@@ -411,7 +421,7 @@ html, body {
 
 .ammo-numbers {
   font-family: var(--font-title);
-  font-size: 26px;
+  font-size: 28px;
   color: var(--color-white);
   text-shadow: 2px 2px 0 #000;
 }
@@ -423,7 +433,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(10, 18, 30, 0.75);
+  background: rgba(10, 18, 30, 0.78);
   backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
@@ -435,11 +445,11 @@ html, body {
 .menu-card {
   background: #ffffff;
   color: var(--color-dark-bg);
-  border: 4px solid #000;
-  border-radius: 28px;
+  border: 4.5px solid #000;
+  border-radius: 32px;
   padding: 36px 44px;
-  box-shadow: 0 16px 0 rgba(0, 0, 0, 0.4);
-  max-width: 520px;
+  box-shadow: 0 16px 0 rgba(0, 0, 0, 0.45);
+  max-width: 530px;
   width: 90%;
   text-align: center;
   display: flex;
@@ -461,85 +471,93 @@ html, body {
   background: var(--color-dark-bg);
   color: var(--color-pop-yellow);
   font-family: var(--font-title);
-  font-size: 12px;
-  padding: 4px 14px;
+  font-size: 13px;
+  padding: 5px 16px;
   border-radius: 20px;
-  letter-spacing: 1px;
+  border: 2px solid #000;
+  letter-spacing: 1.5px;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3);
 }
 
 .game-title {
   font-family: var(--font-title);
-  font-size: 38px;
+  font-size: 42px;
   color: var(--color-blitz-red);
-  text-shadow: 3px 3px 0 #000;
+  text-shadow: 3.5px 3.5px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
   line-height: 1.1;
+  letter-spacing: 1px;
 }
 
 .game-subtitle {
   font-family: var(--font-title);
-  font-size: 20px;
+  font-size: 22px;
   color: var(--color-pop-gold);
-  text-shadow: 2px 2px 0 #000;
+  text-shadow: 2.5px 2.5px 0 #000, -1.5px -1.5px 0 #000;
   margin-top: -6px;
+  letter-spacing: 1px;
 }
 
 .how-to-play-card {
   background: var(--color-cream);
-  border: 2px dashed #ff9f43;
-  border-radius: 16px;
-  padding: 16px 20px;
+  border: 3px dashed #ff9f43;
+  border-radius: 20px;
+  padding: 18px 22px;
   text-align: left;
   width: 100%;
-  font-family: var(--font-body);
-  font-size: 14px;
+  font-family: var(--font-primary);
+  font-size: 15px;
   color: #2c3e50;
+  line-height: 1.6;
 }
 
 .how-to-play-card h3 {
-  font-family: var(--font-primary);
-  font-size: 16px;
+  font-family: var(--font-title);
+  font-size: 18px;
   color: #d35400;
   margin-bottom: 8px;
+  letter-spacing: 0.5px;
 }
 
 .guide-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-top: 6px;
+  gap: 8px;
+  margin-top: 8px;
 }
 
 .key-badge {
   background: #ffffff;
-  border: 2px solid #2c3e50;
-  border-radius: 6px;
-  padding: 1px 6px;
-  font-family: var(--font-primary);
-  font-weight: 700;
-  box-shadow: 0 2px 0 #2c3e50;
+  border: 2.5px solid #2c3e50;
+  border-radius: 8px;
+  padding: 2px 8px;
+  font-family: var(--font-title);
+  font-size: 14px;
+  color: var(--color-blitz-red);
+  box-shadow: 0 2.5px 0 #2c3e50;
 }
 
 .high-score-hint {
-  font-size: 14px;
-  font-weight: 700;
+  font-family: var(--font-primary);
+  font-size: 16px;
   color: #7f8c8d;
 }
 
 .high-score-hint span {
   color: var(--color-blitz-red);
-  font-size: 18px;
+  font-size: 22px;
   font-family: var(--font-title);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* 按钮通用风格 */
 .btn {
   font-family: var(--font-title);
-  font-size: 20px;
-  letter-spacing: 0.5px;
-  padding: 14px 36px;
-  border-radius: 20px;
-  border: 3px solid #000;
+  font-size: 22px;
+  letter-spacing: 1px;
+  padding: 14px 40px;
+  border-radius: 22px;
+  border: 3.5px solid #000;
   cursor: pointer;
   outline: none;
   transition: all 0.1s ease-in-out;
@@ -547,6 +565,7 @@ html, body {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  text-shadow: 1.5px 1.5px 0 #000;
 }
 
 .btn-primary {
@@ -568,7 +587,9 @@ html, body {
 
 .btn-secondary {
   background: var(--color-pop-yellow);
-  color: #000;
+  color: #111;
+  text-shadow: none;
+  font-weight: 800;
   box-shadow: var(--shadow-comic-yellow);
 }
 
@@ -591,12 +612,14 @@ html, body {
 
 .menu-heading {
   font-family: var(--font-title);
-  font-size: 28px;
+  font-size: 32px;
   color: var(--color-dark-bg);
+  letter-spacing: 0.5px;
 }
 
 .menu-subtext {
-  font-size: 15px;
+  font-family: var(--font-primary);
+  font-size: 16px;
   color: #576574;
 }
 
@@ -610,50 +633,56 @@ html, body {
 
 .stat-box {
   background: #f1f2f6;
-  border: 2px solid #000;
-  border-radius: 14px;
+  border: 3px solid #000;
+  border-radius: 16px;
   padding: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .stat-label {
-  font-size: 12px;
+  font-family: var(--font-primary);
+  font-size: 13px;
   color: #747d8c;
   font-weight: 700;
 }
 
 .stat-val {
   font-family: var(--font-title);
-  font-size: 24px;
+  font-size: 26px;
   color: var(--color-dark-bg);
+  letter-spacing: 0.5px;
 }
 
 .stat-val.highlight {
   color: var(--color-blitz-red);
-  font-size: 30px;
+  font-size: 32px;
 }
 
 .rating-banner {
   background: var(--color-pop-yellow);
   color: #000;
-  border: 3px solid #000;
+  border: 3.5px solid #000;
   font-family: var(--font-title);
-  font-size: 22px;
-  padding: 6px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
+  font-size: 24px;
+  padding: 8px 24px;
+  border-radius: 16px;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.3);
   transform: rotate(-2deg);
+  letter-spacing: 0.5px;
 }
 
 .game-over-badge {
   background: var(--color-blitz-red);
   color: #fff;
   font-family: var(--font-title);
-  font-size: 14px;
-  padding: 4px 16px;
+  font-size: 15px;
+  padding: 5px 18px;
+  border: 2px solid #000;
   border-radius: 20px;
+  letter-spacing: 1px;
 }
 
 /* 鼠标锁定点击提示 */
@@ -663,7 +692,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.45);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -674,12 +703,13 @@ html, body {
   background: #ffffff;
   color: #000;
   font-family: var(--font-title);
-  font-size: 18px;
-  padding: 16px 28px;
-  border: 3px solid #000;
-  border-radius: 20px;
+  font-size: 20px;
+  padding: 18px 32px;
+  border: 3.5px solid #000;
+  border-radius: 24px;
   box-shadow: var(--shadow-comic);
   animation: pulseLock 1s infinite alternate;
+  letter-spacing: 0.5px;
 }
 
 @keyframes pulseLock {
